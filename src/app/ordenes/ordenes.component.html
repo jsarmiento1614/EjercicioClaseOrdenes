@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Ordenes</h2>
+      <div class="card-text"></div>
+      <div class = "table table-hover">
+        <table class="table">
+            <thead class="">
+            <tr class="font-weight-bold">
+              <td>Nombre del Cliente</td>
+              <td>Platillo</td>
+              <td>Total a pagar</td>
+              <td>Orden Entregada</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orden of Ordenes" (click)="detalles(orden)" (class.selected)="orden===selectedOrden">
+              <td>{{orden.nombreCliente}}</td>
+              <td>{{orden.platillo}}</td>
+              <td>{{orden.totalPagar}}</td>
+              <td><input type="radio" [value]="orden.OrdenEntregada"> </td>
+            </tr>
+          </tbody>
+      </table>
+      </div>
+    </div>
+</div>
+
+<div class="card">
+  Nombre Cliente: {{selectedOrden.nombreCliente}}
+  Platillo: {{selectedOrden.platillo}}
+  TotalPagar: {{selectedOrden.totalPagar}}
+</div>
